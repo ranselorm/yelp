@@ -9,15 +9,19 @@ const catchAsync = require("./utils/catchAsync");
 const ExpressError = require("./utils/ExpressError");
 const { campgroundSchema, reviewSchema } = require("./schemas");
 
-mongoose.connect("mongodb://localhost:27017/yelpCamp", {
-  useNewUrlParser: true,
-});
+const uri = process.env.MONGODB_URI;
 
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error"));
-db.once("open", () => {
-  console.log("Database connected");
-});
+mongoose.connect(uri || "mongodb://localhost:27017/yelpCamp");
+
+// mongoose.connect("mongodb://localhost:27017/yelpCamp", {
+//   useNewUrlParser: true,
+// });
+
+// const db = mongoose.connection;
+// db.on("error", console.error.bind(console, "connection error"));
+// db.once("open", () => {
+//   console.log("Database connected");
+// });
 
 const app = express();
 
