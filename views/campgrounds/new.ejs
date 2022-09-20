@@ -11,7 +11,7 @@
           class="form-control"
           type="text"
           id="title"
-          name="title"
+          name="campground[title]"
           required
         />
         <div class="valid-feedback">Looks good!</div>
@@ -23,7 +23,7 @@
           class="form-control"
           type="text"
           id="location"
-          name="location"
+          name="campground[location]"
           required
         />
         <div class="valid-feedback">Looks good!</div>
@@ -34,7 +34,7 @@
           class="form-control"
           type="text"
           id="image"
-          name="image"
+          name="campground[image]"
           required
         />
         <div class="valid-feedback">Looks good!</div>
@@ -47,7 +47,7 @@
             type="text"
             class="form-control"
             placeholder="20.65"
-            name="price"
+            name="campground[price]"
             required
           />
           <div class="valid-feedback">Looks good!</div>
@@ -59,7 +59,7 @@
           class="form-control"
           type="text"
           id="description"
-          name="description"
+          name="campground[description]"
           required
         ></textarea>
         <div class="valid-feedback">Looks good!</div>
@@ -70,29 +70,3 @@
 </div>
 
 <footer><a href="/campgrounds">Back to Index</a></footer>
-
-<script>
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
-  (() => {
-    "use strict";
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll(".validated-form");
-
-    // Loop over them and prevent submission
-    Array.from(forms).forEach((form) => {
-      form.addEventListener(
-        "submit",
-        (event) => {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-
-          form.classList.add("was-validated");
-        },
-        false
-      );
-    });
-  })();
-</script>

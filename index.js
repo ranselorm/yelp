@@ -10,7 +10,6 @@ const ExpressError = require("./utils/ExpressError");
 const { campgroundSchema, reviewSchema } = require("./schemas");
 
 const uri = process.env.MONGODB_URI;
-
 mongoose.connect(uri || "mongodb://localhost:27017/yelpCamp");
 
 // mongoose.connect("mongodb://localhost:27017/yelpCamp", {
