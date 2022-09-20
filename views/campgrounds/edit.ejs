@@ -1,0 +1,77 @@
+<% layout('layouts/boilerplate') %>
+
+<h1 class="text-center mb-5">Edit campground</h1>
+
+<div class="row">
+  <div class="col-6 offset-3">
+    <form
+      action="/campgrounds/<%= campground.id %>?_method=PUT"
+      method="POST"
+      novalidate
+      class="validated-form"
+    >
+      <div class="mb-3">
+        <label class="form-label" for="title">Title</label>
+        <input
+          class="form-control"
+          type="text"
+          id="title"
+          name="title"
+          value="<%= campground.title %>"
+          required
+        />
+      </div>
+      <br />
+      <div class="mb-3">
+        <label class="form-label" for="location">Location</label>
+        <input
+          class="form-control"
+          type="text"
+          id="location"
+          name="location"
+          value="<%= campground.location %>"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="image">Image URL</label>
+        <input
+          class="form-control"
+          type="text"
+          id="image"
+          name="image"
+          value="<%= campground.image %>"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="price">Campground Price</label>
+        <div class="input-group">
+          <span class="input-group-text" id="price">$</span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="20.65"
+            name="price"
+            value="<%= campground.price %>"
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="description">Description</label>
+        <textarea
+          class="form-control"
+          type="text"
+          id="description"
+          name="description"
+          required
+        >
+<%= campground.description %></textarea
+        >
+      </div>
+      <button class="btn btn-info">Update Campground</button>
+    </form>
+  </div>
+</div>
+
