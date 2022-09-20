@@ -73,7 +73,7 @@ app.post(
   "/campgrounds",
   validateCampground,
   catchAsync(async (req, res, next) => {
-    const data = req.body;
+    const data = req.body.campground;
     const camp = new Campground(data);
     await camp.save();
     res.redirect(`/campgrounds/${camp._id}`);
