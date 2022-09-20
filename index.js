@@ -103,8 +103,8 @@ app.put(
   validateCampground,
   catchAsync(async (req, res) => {
     const { id } = req.params;
-    const campground = await Campground.findByIdAndUpdate(id, req.body, {
-      runValidators: true,
+    const campground = await Campground.findByIdAndUpdate(id, {
+      ...req.body.campground,
     });
     res.redirect(`/campgrounds/${campground.id}`);
   })
